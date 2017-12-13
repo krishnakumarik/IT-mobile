@@ -28,11 +28,6 @@ export class CreateBookPage {
 
   constructor(public navCtrl: NavController,public rest:RestProvider) { }
 
-  // submitFun()
-  // {
-  //   this.query.searchDate=this.initDate;
-  // console.log(this.query)
-  // }
    bookeRooms(){
     var url="http://localhost:3000/itdept/api/getBookedRooms";
     this.rest.getBookedRooms(url,this.query)
@@ -49,10 +44,11 @@ export class CreateBookPage {
 
               this.guestHouse=data.data[i][0];
               this.datesList=data.data[i][0].ROOMS[0].DATES;
-              this.datesList.forEach((x)=>{
-                var ddmm=new Date(x.DATE);
-                x.bookingDates=ddmm.getDay()+"/"+(ddmm.getMonth()+1);            
-              })
+              // this.datesList.forEach((x)=>{
+              //   var ddmm=new Date(x.DATE);
+              //   x.bookingDates=ddmm.getDay()+"/"+(ddmm.getMonth()+1);  
+              //   console.log(x.bookingDates);          
+              // })
          
             }
 

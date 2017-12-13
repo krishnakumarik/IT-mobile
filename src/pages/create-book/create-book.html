@@ -27,7 +27,7 @@
 <ion-row>{{guestHouse.GUESTHOUSENAME}}</ion-row>
 <ion-row >
     <!-- <ion-col>Dates</ion-col> -->
-  <ion-col *ngFor="let roomDates of datesList">{{roomDates.bookingDates}}</ion-col>
+  <ion-col *ngFor="let roomDates of datesList">{{roomDates.DATE | date:'dd/MM'}}</ion-col>
 
   <!-- <ion-col>Date</ion-col>
   <ion-col>Date</ion-col>
