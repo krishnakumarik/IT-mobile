@@ -1,0 +1,19 @@
+<ion-content padding>
+  <div class="login-main">
+    
+    <div class="login-main-logo"  ></div>
+    
+    <div class="login-main-sub-div">
+      <ion-item>
+        <ion-input type="text" name="userName" [(ngModel)]="payload.userName" placeholder="User Name" class="login-main-sub-div-input"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" name="password" [(ngModel)]="payload.password" placeholder="Password" class="login-main-sub-div-input input-bottom"></ion-input>
+      </ion-item>
+      <br>
+      <button ion-button block (click)="getuserdetails()" class="login-main-sub-div-login">Log In</button>
+
+    </div>
+  </div>
+</ion-content>
+

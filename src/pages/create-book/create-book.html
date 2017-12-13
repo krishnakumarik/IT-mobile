@@ -1,0 +1,48 @@
+<ion-item>
+  <span ion-datepicker [(value)]="initDate" clear class="ScheduleDate">
+    <span>{{initDate | date}}
+      <ion-icon name="clipboard" item-left></ion-icon>
+    </span>
+  </span>
+</ion-item>
+<ion-item>
+  <ion-select placeholder="select guest house" [(ngModel)]="query.guestHouseName">
+    <ion-option value="AMARAVATHI">Amaravathi</ion-option>
+    <ion-option value="BANJARA HILLS ROAD NO.10">Banjara Hills road no. 10</ion-option>
+    <ion-option value="BANJARA HILLS ROAD NO.12">Banjara Hills road no. 12</ion-option>
+    <ion-option value="MEHDI MANZIL">Mehdai Manzil</ion-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-select placeholder="Select Room" [(ngModel)]="query.type">
+    <ion-option value="NORMAL ROOM">Normal Room</ion-option>
+    <ion-option value="SUIT ROOM">suit Room</ion-option>
+  </ion-select>
+</ion-item>
+<br>
+<br>
+<br>
+
+<button ion-button block (click)="bookeRooms()">Submit</button>
+<ion-row>{{guestHouse.GUESTHOUSENAME}}</ion-row>
+<ion-row >
+    <!-- <ion-col>Dates</ion-col> -->
+  <ion-col *ngFor="let roomDates of datesList">{{roomDates.bookingDates}}</ion-col>
+
+  <!-- <ion-col>Date</ion-col>
+  <ion-col>Date</ion-col>
+  <ion-col>Date</ion-col>
+  <ion-col>Date</ion-col>
+  <ion-col>Date</ion-col> -->
+</ion-row>
+<ion-row *ngFor="let room of guestHouse.ROOMS">
+  <ion-col>{{room.ROOMNAME | slice:0:10}}</ion-col>
+  <ion-col><ion-checkbox></ion-checkbox></ion-col>
+  <ion-col> <ion-checkbox></ion-checkbox></ion-col>
+  <ion-col><ion-checkbox></ion-checkbox></ion-col>
+  <ion-col><ion-checkbox></ion-checkbox></ion-col>
+  <ion-col><ion-checkbox></ion-checkbox></ion-col>
+</ion-row>
+<ion-row>
+
+  <button ion-button block>Book Now</button>
